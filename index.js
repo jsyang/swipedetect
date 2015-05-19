@@ -1,4 +1,4 @@
-var Swiper = function (element, cbs, thresholdX, thresholdY) {
+var SwipeDetect = function (element, cbs, thresholdX, thresholdY) {
     this.thresholdX = thresholdX || 30;
     this.thresholdY = thresholdY || 10;
 
@@ -57,7 +57,7 @@ var Swiper = function (element, cbs, thresholdX, thresholdY) {
     };
 };
 
-Swiper.prototype.onDown = function (e) {
+SwipeDetect.prototype.onDown = function (e) {
     if (e instanceof TouchEvent) {
         this.xDown = e.changedTouches[0].clientX;
         this.yDown = e.changedTouches[0].clientY;
@@ -67,7 +67,7 @@ Swiper.prototype.onDown = function (e) {
     }
 };
 
-Swiper.prototype.onUp = function (e) {
+SwipeDetect.prototype.onUp = function (e) {
     var xUp;
     var yUp;
 
