@@ -89,9 +89,9 @@ SwipeDetect.prototype.onUp = function (e) {
 
         if (xDiff > this.thresholdX) {
             if (this.xDown > xUp) {
-                this.onEast && this.onEast(cbParams);
-            } else {
                 this.onWest && this.onWest(cbParams);
+            } else {
+                this.onEast && this.onEast(cbParams);
             }
         }
 
@@ -100,9 +100,9 @@ SwipeDetect.prototype.onUp = function (e) {
 
         if (yDiff > this.thresholdY) {
             if (this.yDown > yUp) {
-                this.onSouth && this.onSouth(cbParams);
-            } else {
                 this.onNorth && this.onNorth(cbParams);
+            } else {
+                this.onSouth && this.onSouth(cbParams);
             }
         }
     }
