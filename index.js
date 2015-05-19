@@ -85,24 +85,28 @@ SwipeDetect.prototype.onUp = function (e) {
     var cbParams;
 
     if (xDiff > yDiff) {
-        cbParams = { amount: xDiff, event: e };
+        if (this.thresholdX !== Infinity) {
+            cbParams = { amount: xDiff, event: e };
 
-        if (xDiff > this.thresholdX) {
-            if (this.xDown > xUp) {
-                this.onWest && this.onWest(cbParams);
-            } else {
-                this.onEast && this.onEast(cbParams);
+            if (xDiff > this.thresholdX) {
+                if (this.xDown > xUp) {
+                    this.onWest && this.onWest(cbParams);
+                } else {
+                    this.onEast && this.onEast(cbParams);
+                }
             }
         }
 
     } else {
-        cbParams = { amount: yDiff, event: e };
+        if (this.thresholdY !== Infinity) {
+            cbParams = { amount: yDiff, event: e };
 
-        if (yDiff > this.thresholdY) {
-            if (this.yDown > yUp) {
-                this.onNorth && this.onNorth(cbParams);
-            } else {
-                this.onSouth && this.onSouth(cbParams);
+            if (yDiff > this.thresholdY) {
+                if (this.yDown > yUp) {
+                    this.onNorth && this.onNorth(cbParams);
+                } else {
+                    this.onSouth && this.onSouth(cbParams);
+                }
             }
         }
     }
