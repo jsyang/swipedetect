@@ -1,3 +1,16 @@
+/**
+ * Swipe detect across desktop and mobile with no dependencies.
+ * @param {HTMLDOMElement} element
+ * @param {object} [cbs]
+ * @param {function} [cbs.onNorth]
+ * @param {function} [cbs.onSouth]
+ * @param {function} [cbs.onEast]
+ * @param {function} [cbs.onWest]
+ * 
+ * @param {number} thresholdX
+ * @param {number} thresholdY
+ * @constructor
+ */
 var SwipeDetect = function (element, cbs, thresholdX, thresholdY) {
     this.thresholdX = thresholdX || 30;
     this.thresholdY = thresholdY || 10;
